@@ -1,0 +1,32 @@
+{
+  "name": "leggytracker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "compile:legendary": "tsx scripts/compile-legendary.ts",
+    "compile:legendary:armor": "tsx scripts/compile-legendary.ts --armor-only",
+    "compile:legendary:weapons": "tsx scripts/compile-legendary.ts --weapons-only",
+    "compile:legendary:obsidian": "tsx scripts/compile-legendary.ts --obsidian-armor",
+    "compile:legendary:mistforged": "tsx scripts/compile-legendary.ts --mistforged-armor",
+    "generate:data": "tsx scripts/generate-data.ts",
+    "search:items": "tsx scripts/search-items.ts",
+    "compile:full": "npm run compile:legendary && npm run generate:data",
+    "import:blishhud": "tsx scripts/import-blishhud-todos.ts"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.19"
+  }
+}

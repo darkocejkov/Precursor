@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npx vite *)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/otc-cirdan/gw2-items/refs/heads/master/items.csv\")",
+      "Bash(curl -s \"https://api.guildwars2.com/v2/items/76361\")",
+      "Bash(curl -s \"https://api.guildwars2.com/v2/items/19675\")",
+      "Bash(curl -s \"https://api.guildwars2.com/v2/recipes/search?output=76361\")",
+      "Bash(curl -s \"https://api.guildwars2.com/v2/recipes/search?output=19675\")",
+      "Bash(curl -s \"https://edge.gw2efficiency.com/recipes?v=2024-07-20T01%3A00%3A00.000Z&ids=76361\")",
+      "Bash(curl -s \"https://edge.gw2efficiency.com/recipes?v=2024-07-20T01%3A00%3A00.000Z&ids=76363\")",
+      "Bash(curl -s \"https://api.guildwars2.com/v2/recipes/10002\")",
+      "Bash(awk -F',' '$3==\"Armor\" && $5==\"Legendary\"')",
+      "Bash(awk -F',' '$3==\"Weapon\" && $5==\"Legendary\"')",
+      "Bash(curl -s \"https://edge.gw2efficiency.com/recipes?v=2024-07-20T01%3A00%3A00.000Z&ids=80384\")",
+      "Bash(curl -s \"https://api.guildwars2.com/v2/recipes/search?output=80384\")",
+      "Bash(npm run *)",
+      "Bash(npm pkg *)",
+      "Bash(npx tsx *)",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('scripts/output/30684.json','utf8'\\)\\); console.log\\(d.name, d.type, d.disciplines, 'components:', d.components.length\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(echo \"TSC Exit: $?\")",
+      "Bash(netstat -ano)",
+      "Bash(python3 -c 'import json,sys; d=json.load\\(open\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\); print\\(d.get\\('\\\\''Schedule'\\\\'',{}\\).get\\('\\\\''Duration'\\\\'','\\\\''?'\\\\''\\), d.get\\('\\\\''Schedule'\\\\'',{}\\).get\\('\\\\''Type'\\\\'','\\\\''?'\\\\''\\), repr\\(d.get\\('\\\\''ClipboardContent'\\\\'','\\\\'''\\\\''\\)\\)\\)')",
+      "Bash(node -e \"const d = require\\('./leggy-todos-import.json'\\); console.log\\(JSON.stringify\\(d.slice\\(0,3\\), null, 2\\)\\)\")"
+    ]
+  }
+}

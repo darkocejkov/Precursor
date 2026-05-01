@@ -1,0 +1,290 @@
+[
+  {
+    "id": "aaa3dad5-c921-498c-a68c-b09e1a5b5d67",
+    "text": "Janthir - Weekly Rifts",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "4ca7af0d-66c1-4cf0-9424-d887e977211f",
+    "text": "Janthir - 2 Convergences",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "4f11b0b4-2abb-4aca-bea4-512e4313dade",
+    "text": "Secrets - Weekly Rifts",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "6096cf8a-0d89-4ec5-bfb2-24821ab4dd1e",
+    "text": "Secrets - 2 Convergences",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "b279c3ad-6379-4adb-a9fb-84784f175a45",
+    "text": "Visions - Weekly Rifts",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "c867eb1f-0836-49ef-a5bd-ffe1fd693fa4",
+    "text": "Maguuma Bloodstone+Empyreal",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "3e8bec62-f7f8-4eaa-88ad-17aac25e9d54",
+    "text": "Daily Fractals",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "dc53a173-e26f-45dd-98b5-8eb67339bf74",
+    "text": "Fractal Keys",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "f8d8999a-3427-460b-b344-5f096e49d431",
+    "text": "Provisioner's Tokens",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "0facb4c2-0917-4615-be32-1ed9c1311f23",
+    "text": "Mystic Forge Clovers (10)",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "36a5f713-bb39-4cf3-a830-39505a5ca78e",
+    "text": "Fractal Mystic Clovers (10)",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "4e00e390-c52a-4b7d-a169-7de66121ca2b",
+    "text": "WvW Mystic Clovers (5)",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "de8df66f-2c34-49ea-9149-a0a37067311b",
+    "text": "Bjora Marches Chests",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "c851a691-4782-473b-b058-2d087a07a36b",
+    "text": "WvW (Gift of Battle)",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "bf807127-01a7-4f13-a38c-b1be9da7f0a5",
+    "text": "Obsidian Shards",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "48a53751-e96a-4699-92ac-3921db0626a5",
+    "text": "Ascended Crafting",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "58bc0c69-9fbc-4274-85ff-15d4262a6a00",
+    "text": "Drizzlewood Cache Keys",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "0f51a0b4-db92-459a-b44b-0e2fc7742006",
+    "text": "Daily Exchanges",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "48438efd-fdd5-428c-a3d3-e3123e140cb5",
+    "text": "Charged Quartz",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "d8a45959-ffc9-4bf5-9c57-36af5dfadea5",
+    "text": "VM Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BH4LAAA=]"
+  },
+  {
+    "id": "fbd0add5-abd1-4b78-be90-6ae6fde72346",
+    "text": "Seitung Harbour Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BJ4MAAA=]"
+  },
+  {
+    "id": "d5023936-4364-45ec-aefb-2cc5b01d5df0",
+    "text": "Harvest Den Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BK4OAAA=]"
+  },
+  {
+    "id": "7d19a713-8288-4959-bf42-9cc1a7b822cb",
+    "text": "Vine Bridge Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BIYHAAA=]"
+  },
+  {
+    "id": "4198a8aa-d3fb-469c-80e9-9d5e153e46ba",
+    "text": "Guild Hall Gathering",
+    "done": false,
+    "resetOn": "daily"
+  },
+  {
+    "id": "fb1ad8ee-3ad0-4d9b-a25e-4fc74217b4c1",
+    "text": "Arkjok Farlands Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BFcLAAA=]"
+  },
+  {
+    "id": "6673bfab-1329-4ab3-a445-7b855bc880cd",
+    "text": "Althoma Gaterhing",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BEMLAAA=]"
+  },
+  {
+    "id": "6e7581d4-0532-4fd6-aab3-c8a8e55733c3",
+    "text": "Cobbleridge Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BAACAAA=]"
+  },
+  {
+    "id": "a6295bfb-ec82-454b-83b9-2f5e5e4b237c",
+    "text": "Strawberries Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BN4AAAA=]"
+  },
+  {
+    "id": "3a779034-a6f9-4ba5-87e6-7a2115875abb",
+    "text": "Grapes Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BE8BAAA=]"
+  },
+  {
+    "id": "fcc9e47e-c81d-4564-9c3a-9db9572d4690",
+    "text": "Butternut Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BB0CAAA=]"
+  },
+  {
+    "id": "d5d0aadf-3ecc-4fd9-b211-603cf6f89784",
+    "text": "Grohmar Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BBsMAAA=]"
+  },
+  {
+    "id": "c489b2ef-79dd-47d7-848b-77f27ae38ffb",
+    "text": "Pumpkin Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BOwBAAA=]"
+  },
+  {
+    "id": "2804ab34-2b96-4698-96b7-1e21d0d75924",
+    "text": "Potato Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BMcDAAA=]"
+  },
+  {
+    "id": "5f92a22e-814b-4cc9-9ada-3ceb6f7a2f41",
+    "text": "Wide Expanse Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BF8CAAA=]"
+  },
+  {
+    "id": "695f297c-db48-4d7f-aedc-d010d0b06d71",
+    "text": "Snowden Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BMAAAAA=]"
+  },
+  {
+    "id": "bb40a66f-89cc-4cf6-9edc-e483aadca515",
+    "text": "Fisher's Eye Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BFECAAA=]"
+  },
+  {
+    "id": "3f3cefe5-5309-412a-9104-7173798f23a6",
+    "text": "Risewild Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BKcBAAA=]"
+  },
+  {
+    "id": "2aeeb7a8-89dd-4936-8d97-4c0940e6fa54",
+    "text": "Harathi Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BKsAAAA=]"
+  },
+  {
+    "id": "80b61783-63ef-41c3-969c-5f5969ac82d7",
+    "text": "Wizard 's Fief Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BBIAAAA=]"
+  },
+  {
+    "id": "36dff610-7aaf-431b-b6fe-36fdb33466c7",
+    "text": "Queensdale Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BPoAAAA=]"
+  },
+  {
+    "id": "6a4e7ab6-144a-4c82-83e0-afc1d70da10c",
+    "text": "Akk Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BEIAAAA=]"
+  },
+  {
+    "id": "37fa26f5-bcfe-491c-8e08-266a9a40c142",
+    "text": "Artichoke Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BNECAAA=]"
+  },
+  {
+    "id": "546bba5b-c66b-4fca-841b-bf57c70d4bfa",
+    "text": "Bramble Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BFgGAAA=]"
+  },
+  {
+    "id": "5e0032dd-210a-4a00-9f3f-6a48b4000198",
+    "text": "Verdant Brink Gathering",
+    "done": false,
+    "resetOn": "daily",
+    "waypoint": "[&BOAHAAA=]"
+  }
+]
