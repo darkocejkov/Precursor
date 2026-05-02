@@ -10,10 +10,10 @@ interface TodoItem {
   waypoint?: string
 }
 
-const TODO_KEY        = 'leggy_todos'
-const LAST_DAILY_KEY  = 'leggy_last_daily_reset'
-const LAST_WEEKLY_KEY = 'leggy_last_weekly_reset'
-const LOCKED_KEY      = 'leggy_todos_locked'
+const TODO_KEY        = 'precursor_todos'
+const LAST_DAILY_KEY  = 'precursor_last_daily_reset'
+const LAST_WEEKLY_KEY = 'precursor_last_weekly_reset'
+const LOCKED_KEY      = 'precursor_todos_locked'
 
 // ── Reset detection ───────────────────────────────────────────────────────────
 
@@ -138,7 +138,7 @@ export function TodoList() {
     const url  = URL.createObjectURL(blob)
     const a    = document.createElement('a')
     a.href     = url
-    a.download = `leggy-todos-${new Date().toISOString().slice(0, 10)}.json`
+    a.download = `precursor-todos-${new Date().toISOString().slice(0, 10)}.json`
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -161,7 +161,7 @@ export function TodoList() {
         )
         update(valid)
       } catch {
-        alert('Could not import — file must be a valid LeggyTracker JSON export.')
+        alert('Could not import — file must be a valid Precursor JSON export.')
       }
       e.target.value = ''
     }

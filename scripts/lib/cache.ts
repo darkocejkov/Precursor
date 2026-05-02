@@ -22,7 +22,7 @@ export async function fetchWithCache<T = unknown>(url: string, bustCache = false
 
   process.stdout.write(`  [GET] ${url}\n`)
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'LeggyTracker/1.0 (compiler script)' },
+    headers: { 'User-Agent': 'Precursor/1.0 (compiler script)' },
   })
 
   if (!res.ok) {

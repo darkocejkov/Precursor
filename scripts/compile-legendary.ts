@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * LeggyTracker — Legendary Recipe Compiler
+ * Precursor — Legendary Recipe Compiler
  *
  * Fetches full crafting trees for GW2 legendary armor and weapons from
  * gw2efficiency and the official GW2 API, then writes structured JSON
@@ -210,7 +210,7 @@ async function main() {
   const idsArg         = args.find(a => !a.startsWith('--'))
 
   console.log('╔══════════════════════════════════════╗')
-  console.log('║  LeggyTracker — Recipe Compiler      ║')
+  console.log('║  Precursor — Recipe Compiler         ║')
   console.log('╚══════════════════════════════════════╝\n')
 
   const allEnvoyIds    = Object.values(ENVOY_ARMOR).flatMap(s => s.ids)

@@ -1,13 +1,13 @@
 #!/usr/bin/env tsx
 /**
- * Converts BlishHUD .todo.json files into LeggyTracker's todo JSON format.
+ * Converts BlishHUD .todo.json files into Precursor's todo JSON format.
  *
  * Usage:
  *   npx tsx scripts/import-blishhud-todos.ts [todos-dir] [output-file]
  *
  * Defaults:
  *   todos-dir   : C:\Users\<you>\OneDrive\Documents\Guild Wars 2\addons\blishhud\todos
- *   output-file : leggy-todos-import.json  (in project root, ready to Import in the app)
+ *   output-file : precursor-todos-import.json  (in project root, ready to Import in the app)
  */
 
 import fs   from 'node:fs'
@@ -34,7 +34,7 @@ interface BlishTodo {
   ClipboardContent: string | null
 }
 
-// ── LeggyTracker schema ───────────────────────────────────────────────────────
+// ── Precursor schema ───────────────────────────────────────────────────────
 
 type ResetCycle = 'daily' | 'weekly'
 
@@ -79,7 +79,7 @@ function main() {
   )
 
   const todosDir  = process.argv[2] ?? defaultDir
-  const outFile   = process.argv[3] ?? path.join(__dirname, '..', 'leggy-todos-import.json')
+  const outFile   = process.argv[3] ?? path.join(__dirname, '..', 'precursor-todos-import.json')
 
   if (!fs.existsSync(todosDir)) {
     console.error(`Directory not found: ${todosDir}`)
@@ -130,7 +130,7 @@ function main() {
   console.log(`✓ Converted ${output.length} todos → ${path.relative(process.cwd(), outFile)}`)
   console.log(`  daily: ${daily}  weekly: ${weekly}  one-off: ${oneoff}  with waypoint: ${wps}`)
   console.log()
-  console.log('Import into LeggyTracker: To-Do tab → Import button → select the file above.')
+  console.log('Import into Precursor: To-Do tab → Import button → select the file above.')
 }
 
 main()

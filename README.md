@@ -1,4 +1,4 @@
-# ◆ LeggyTracker (_name subject to change_)
+# ◆ Precursor (_name subject to change_)
 
 
 
@@ -63,7 +63,7 @@ If you use [BlishHUD](https://blishhud.com/), convert your existing todos:
 npm run import:blishhud
 ```
 
-Then in the app: **To-Do → Import** and select `leggy-todos-import.json` from the project root.
+Then in the app: **To-Do → Import** and select `precursor-todos-import.json` from the project root.
 
 ## Tech
 

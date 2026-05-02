@@ -22,8 +22,8 @@ function groupBySubtype(items: LegendaryItem[]) {
   return Array.from(map.entries()).map(([subtype, items]) => ({ subtype, items }))
 }
 
-const STORAGE_KEY = 'leggy_api_key'
-const ACCOUNT_KEY = 'leggy_account_name'
+const STORAGE_KEY = 'precursor_api_key'
+const ACCOUNT_KEY = 'precursor_account_name'
 
 export default function App() {
   const [view, setView] = useState<View>('tracker')
@@ -93,7 +93,7 @@ export default function App() {
         <div className="header-left">
           <div className="logo">
             <span className="logo-gem">◆</span>
-            <span className="logo-text">LeggyTracker</span>
+            <span className="logo-text">Precursor</span>
           </div>
         </div>
 
