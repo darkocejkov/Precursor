@@ -30,6 +30,13 @@ Upcoming:
 - better mat source/vendor information
 - refresh wallet/bank/storage
 - currency display
+- mastery point tracker
+- cheatsheets
+	- stat cheatsheet
+	- class cheatsheet - rotation
+- legendary runes
+- legendary accessories (amulet, rings, etc)
+
 
 ## Screenshots
 
