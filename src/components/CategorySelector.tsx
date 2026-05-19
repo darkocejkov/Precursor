@@ -5,16 +5,22 @@ interface Props {
   onChange: (c: Category) => void
 }
 
+const LABELS: Record<Category, string> = {
+  armor:     'Armors',
+  weapon:    'Weapons',
+  accessory: 'Accessories',
+}
+
 export function CategorySelector({ active, onChange }: Props) {
   return (
     <nav className="category-nav">
-      {(['armor', 'weapon'] as Category[]).map(cat => (
+      {(['armor', 'weapon', 'accessory'] as Category[]).map(cat => (
         <button
           key={cat}
           className={`category-tab${active === cat ? ' active' : ''}`}
           onClick={() => onChange(cat)}
         >
-          {cat === 'armor' ? 'Armors' : 'Weapons'}
+          {LABELS[cat]}
         </button>
       ))}
     </nav>

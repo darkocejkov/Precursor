@@ -3,6 +3,7 @@ import { NavLink, Routes, Route, Navigate, useMatch } from 'react-router-dom'
 import type { Category, LegendaryItem, PlayerInventory } from './types'
 import { LEGENDARY_ARMORS } from './data/legendary-armors'
 import { LEGENDARY_WEAPONS } from './data/legendary-weapons'
+import { LEGENDARY_ACCESSORIES } from './data/legendary-accessories'
 import { fetchInventory, fetchLegendaryArmory } from './services/gw2-api'
 import { ProgressRing, computeItemProgress } from './components/ProgressRing'
 import { ApiKeyInput } from './components/ApiKeyInput'
@@ -43,7 +44,7 @@ export default function App() {
   const [inventoryLoading, setInventoryLoading] = useState(false)
   const [inventoryError,  setInventoryError]  = useState<string | null>(null)
 
-  const items        = category === 'armor' ? LEGENDARY_ARMORS : LEGENDARY_WEAPONS as LegendaryItem[]
+  const items        = category === 'armor' ? LEGENDARY_ARMORS : category === 'weapon' ? LEGENDARY_WEAPONS : LEGENDARY_ACCESSORIES as LegendaryItem[]
   const selectedItem = items.find(i => i.id === selectedId) ?? items[0] ?? null
 
   const loadInventory = useCallback(async (key: string) => {
@@ -119,44 +120,48 @@ export default function App() {
       <main className="app-main">
         {onLegendaries && (
           <aside className="sidebar">
-            <ApiKeyInput
-              apiKey={apiKey}
-              accountName={accountName}
-              onSave={handleSaveKey}
-              onClear={handleClear}
-            />
+            <div className="sidebar-scroll">
+              {inventoryLoading && <p className="loading-text">Loading inventory…</p>}
+              {inventoryError   && <p className="error-text">{inventoryError}</p>}
 
-            {inventoryLoading && <p className="loading-text">Loading inventory…</p>}
-            {inventoryError   && <p className="error-text">{inventoryError}</p>}
+              <CategorySelector active={category} onChange={c => { setCategory(c); setSelectedId(null) }} />
 
-            <CategorySelector active={category} onChange={c => { setCategory(c); setSelectedId(null) }} />
+              <ul className="item-list">
+                {groupBySubtype(items).map(({ subtype, items: group }) => (
+                  <li key={subtype}>
+                    <p className="item-group-label">{subtype}</p>
+                    <ul>
+                      {group.map(item => {
+                        const owned = isOwned(item)
+                        const pct   = owned ? 1 : getProgress(item)
+                        return (
+                          <li key={item.id}>
+                            <button
+                              className={`item-btn${item.isFullSet ? ' full-set' : ''}${selectedItem?.id === item.id ? ' active' : ''}${owned ? ' owned' : ''}`}
+                              onClick={() => setSelectedId(item.id)}
+                            >
+                              <ProgressRing pct={pct} owned={owned} />
+                              <span className="item-btn-label">
+                                {item.isFullSet ? '◆ ' : ''}{item.name}
+                              </span>
+                            </button>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            <ul className="item-list">
-              {groupBySubtype(items).map(({ subtype, items: group }) => (
-                <li key={subtype}>
-                  <p className="item-group-label">{subtype}</p>
-                  <ul>
-                    {group.map(item => {
-                      const owned = isOwned(item)
-                      const pct   = owned ? 1 : getProgress(item)
-                      return (
-                        <li key={item.id}>
-                          <button
-                            className={`item-btn${item.isFullSet ? ' full-set' : ''}${selectedItem?.id === item.id ? ' active' : ''}${owned ? ' owned' : ''}`}
-                            onClick={() => setSelectedId(item.id)}
-                          >
-                            <ProgressRing pct={pct} owned={owned} />
-                            <span className="item-btn-label">
-                              {item.isFullSet ? '◆ ' : ''}{item.name}
-                            </span>
-                          </button>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </li>
-              ))}
-            </ul>
+            <div className="sidebar-footer">
+              <ApiKeyInput
+                apiKey={apiKey}
+                accountName={accountName}
+                onSave={handleSaveKey}
+                onClear={handleClear}
+              />
+            </div>
           </aside>
         )}
 

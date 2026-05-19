@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
-import { GATHERING_NODES, estimateVM } from '../data/gathering'
+import { GATHERING_NODES, estimateVM, nodeKey } from '../data/gathering'
 import { DAILY_SECTIONS } from '../data/dailies'
 import { PARKING_GROUPS } from '../data/parking'
 import { MATERIAL_ITEM_IDS, fetchItemIconsBatch } from '../services/item-icons'
@@ -167,13 +167,12 @@ export function DailiesView() {
     setTimeout(() => setCopied(null), 1500)
   }
 
-  function toggleGather(waypoint: string) {
+  function toggleGather(key: string, waypoint?: string) {
     const next = new Set(gathered)
-    if (next.has(waypoint)) next.delete(waypoint)
-    else next.add(waypoint)
+    if (next.has(key)) next.delete(key)
+    else { next.add(key); if (waypoint) copyWp(waypoint) }
     setGathered(next)
     localStorage.setItem(GATHER_KEY, JSON.stringify([...next]))
-    copyWp(waypoint)
   }
 
   function resetGathering() {
@@ -332,19 +331,20 @@ export function DailiesView() {
       {gatherOpen && (
         <ul className="todo-list">
           {GATHERING_NODES.map(node => {
-            const isDone = gathered.has(node.waypoint)
+            const key    = nodeKey(node)
+            const isDone = gathered.has(key)
             const vm     = estimateVM(node)
             return (
-              <li key={node.waypoint}
+              <li key={key}
                 className={`todo-item with-detail${isDone ? ' done' : ''}`}
                 style={{ cursor: 'pointer' }}
-                onClick={() => toggleGather(node.waypoint)}
+                onClick={() => toggleGather(key, node.waypoint)}
                 onMouseEnter={e => { if (node.image) { setHoverImg(node.image); setHoverPos({ x: e.clientX, y: e.clientY }) } }}
                 onMouseMove={e => { if (node.image) setHoverPos({ x: e.clientX, y: e.clientY }) }}
                 onMouseLeave={() => setHoverImg(null)}
               >
                 <button className="todo-check"
-                  onClick={e => { e.stopPropagation(); toggleGather(node.waypoint) }}>
+                  onClick={e => { e.stopPropagation(); toggleGather(key, node.waypoint) }}>
                   <span className={`todo-check-box${isDone ? ' checked' : ''}`}>
                     {isDone ? '✓' : ''}
                   </span>
@@ -352,38 +352,44 @@ export function DailiesView() {
 
                 <div className="gathering-node-info">
                   <span className="todo-text">{node.location}</span>
-                  <span className="gathering-node-zone">{node.zone}</span>
-                  <div className="gathering-materials">
-                    {node.materials.map(mat => {
-                      const id   = MATERIAL_ITEM_IDS[mat.name]
-                      const icon = id !== undefined ? matIcons.get(id) : undefined
-                      return (
-                        <span key={mat.name} className="gathering-mat-chip"
-                          title={`${mat.name} ×${mat.count}`}>
-                          {icon
-                            ? <img src={icon} className="gathering-mat-icon" alt={mat.name} />
-                            : <span className="gathering-mat-abbr">{mat.name.slice(0, 3)}</span>
-                          }
-                          <span className="gathering-mat-count">×{mat.count}</span>
+                  {node.zone !== node.location && (
+                    <span className="gathering-node-zone">{node.zone}</span>
+                  )}
+                  {node.materials.length > 0 && (
+                    <div className="gathering-materials">
+                      {node.materials.map(mat => {
+                        const id   = MATERIAL_ITEM_IDS[mat.name]
+                        const icon = id !== undefined ? matIcons.get(id) : undefined
+                        return (
+                          <span key={mat.name} className="gathering-mat-chip"
+                            title={`${mat.name} ×${mat.count}`}>
+                            {icon
+                              ? <img src={icon} className="gathering-mat-icon" alt={mat.name} />
+                              : <span className="gathering-mat-abbr">{mat.name.slice(0, 3)}</span>
+                            }
+                            <span className="gathering-mat-count">×{mat.count}</span>
+                          </span>
+                        )
+                      })}
+                      {vm.avg > 0 && (
+                        <span className="gathering-vm" title={`${vm.min}–${vm.max} VM`}>
+                          ~{vm.avg} VM
                         </span>
-                      )
-                    })}
-                    {vm.avg > 0 && (
-                      <span className="gathering-vm" title={`${vm.min}–${vm.max} VM`}>
-                        ~{vm.avg} VM
-                      </span>
-                    )}
-                  </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
-                <div className="wp-badge" onClick={e => e.stopPropagation()}>
-                  <span className="wp-code">{node.waypoint}</span>
-                  <button className={`wp-copy${copied === node.waypoint ? ' copied' : ''}`}
-                    onClick={e => { e.stopPropagation(); copyWp(node.waypoint) }}
-                    title={`Copy: /me ${node.waypoint}`}>
-                    {copied === node.waypoint ? '✓' : '⎘'}
-                  </button>
-                </div>
+                {node.waypoint && (
+                  <div className="wp-badge" onClick={e => e.stopPropagation()}>
+                    <span className="wp-code">{node.waypoint}</span>
+                    <button className={`wp-copy${copied === node.waypoint ? ' copied' : ''}`}
+                      onClick={e => { e.stopPropagation(); copyWp(node.waypoint!) }}
+                      title={`Copy: /me ${node.waypoint}`}>
+                      {copied === node.waypoint ? '✓' : '⎘'}
+                    </button>
+                  </div>
+                )}
               </li>
             )
           })}

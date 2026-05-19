@@ -4,16 +4,25 @@ export interface VendorProduct {
   cost: string
 }
 
+export interface SubVendor {
+  name: string
+  waypoint?: string
+}
+
 export interface CompiledVendor {
   name: string
+  subtitle?: string
   url?: string
+  waypoint?: string
   products: VendorProduct[]
   notes?: string[]
+  subVendors?: SubVendor[]
 }
 
 export const VENDORS: CompiledVendor[] = [
   {
     name: 'BUY-4373',
+    subtitle: 'Fractals',
     url: 'https://wiki.guildwars2.com/wiki/BUY-4373',
     products: [
       {
@@ -34,7 +43,8 @@ export const VENDORS: CompiledVendor[] = [
     ],
   },
   {
-    name: 'Dugan (WvW)',
+    name: 'Dugan',
+    subtitle: 'WvW',
     url: 'https://wiki.guildwars2.com/wiki/Dugan',
     products: [
       {
@@ -50,7 +60,8 @@ export const VENDORS: CompiledVendor[] = [
     ],
   },
   {
-    name: 'League Vendor (PvP)',
+    name: 'League Vendor',
+    subtitle: 'PvP',
     url: 'https://wiki.guildwars2.com/wiki/League_Vendor',
     products: [
       {
@@ -73,6 +84,7 @@ export const VENDORS: CompiledVendor[] = [
   {
     name: 'Lyhr',
     url: 'https://wiki.guildwars2.com/wiki/Lyhr',
+    waypoint: '[&BB8OAAA=]',
     products: [
       {
         name: 'Mystic Clover',
@@ -95,18 +107,21 @@ export const VENDORS: CompiledVendor[] = [
   {
     name: "Wizard's Vault",
     products: [
-      { name: 'Mystic Clover',        limitStr: '20 per season',  cost: '60 Astral Acclaim each' },
-      { name: 'Mystic Coins',         limitStr: '60 per season',  cost: '9 Astral Acclaim each' },
-      { name: 'Obsidian Shard',       limitStr: '20 per season',  cost: '30 Astral Acclaim each' },
-      { name: 'Vision Crystal',       limitStr: '4 per season',   cost: '150 Astral Acclaim each' },
+      { name: 'Mystic Clover',         limitStr: '20 per season',  cost: '60 Astral Acclaim each' },
+      { name: 'Mystic Coins',          limitStr: '60 per season',  cost: '9 Astral Acclaim each' },
+      { name: 'Obsidian Shard',        limitStr: '20 per season',  cost: '30 Astral Acclaim each' },
+      { name: 'Vision Crystal',        limitStr: '4 per season',   cost: '150 Astral Acclaim each' },
       { name: 'Bag of Coins (1 Gold)', limitStr: '100 per season', cost: '8 Astral Acclaim each' },
-      { name: 'Bag of Laurels',       limitStr: '150 per season', cost: '10 Astral Acclaim each' },
-      { name: 'Tome of Knowledge',    limitStr: '35 per season',  cost: '8 Astral Acclaim each' },
+      { name: 'Bag of Laurels',        limitStr: '150 per season', cost: '10 Astral Acclaim each' },
+      { name: 'Tome of Knowledge',     limitStr: '35 per season',  cost: '8 Astral Acclaim each' },
     ],
+    notes: ['Tome of Knowledge is a good source of Spirit Shards.'],
   },
   {
-    name: 'Manfred Njallson (Raids)',
+    name: 'Manfred Njallson',
+    subtitle: 'Raids',
     url: 'https://wiki.guildwars2.com/wiki/Manfred_Njallson',
+    waypoint: '[&BCAJAAA=]',
     products: [
       {
         name: 'Mystic Clover',
@@ -121,23 +136,37 @@ export const VENDORS: CompiledVendor[] = [
     ],
   },
   {
-    name: 'Gharr Leadclaw (Exchanges)',
+    name: 'Super Adventure Box Weekly Trader',
+    url: 'https://wiki.guildwars2.com/wiki/Super_Adventure_Box_Weekly_Trader',
+    products: [
+      { name: 'Mystic Coin',          limitStr: '3 weekly', cost: '5 Bauble Bubbles' },
+      { name: 'Amalgamated Gemstone', limitStr: '3 weekly', cost: '5 Bauble Bubbles' },
+    ],
+    notes: ['Requires the Super Adventure Festival to be active.'],
+  },
+  {
+    name: 'Faction Provisioners',
+    products: [],
+    notes: [
+      '7 tokens each vendor, weekly (21 total).',
+      'Check Heart of Thorns vendor table for cheap TP weapons.',
+    ],
+    subVendors: [
+      { name: 'Quartermaster Natomi', waypoint: '[&BN4HAAA=]' },
+      { name: 'Scavenger Rakatin',    waypoint: '[&BNYHAAA=]' },
+      { name: 'Supply Assistant',     waypoint: '[&BMwHAAA=]' },
+    ],
+  },
+  {
+    name: 'Exchanges',
+    subtitle: 'Horn of Maguuma',
+    url: 'https://wiki.guildwars2.com/wiki/Portable_exchanger',
     products: [
       {
         name: 'Astral Fluctuating Mass',
         limitStr: '42 weekly',
         cost: 'Good sink for Bloodstone / Empyreal / Dragonite',
       },
-    ],
-  },
-  {
-    name: 'Faction Provisioners',
-    products: [],
-    notes: [
-      '7 tokens each vendor, weekly. Look at Heart of Thorns vendor table for cheap TP weapons.',
-      'Quartermaster Natomi — waypoint [&BN4HAAA=]',
-      'Scavenger Rakatin — waypoint [&BNYHAAA=]',
-      'Supply Assistant — waypoint [&BMwHAAA=]',
     ],
   },
 ]

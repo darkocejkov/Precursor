@@ -143,6 +143,13 @@ export function VendorList() {
   const [counts,    setCounts]    = useState<Counts>(loadCounts)
   const [currIcons, setCurrIcons] = useState<Map<number, string>>(new Map())
   const [itemIcons, setItemIcons] = useState<Map<number, string>>(new Map())
+  const [copiedWp,  setCopiedWp]  = useState<string | null>(null)
+
+  async function copyWaypoint(wp: string) {
+    await navigator.clipboard.writeText(`/me ${wp}`)
+    setCopiedWp(wp)
+    setTimeout(() => setCopiedWp(null), 1500)
+  }
 
   useEffect(() => {
     fetchCurrencyIconsBatch(COST_CURRENCY_IDS).then(setCurrIcons)
@@ -154,6 +161,12 @@ export function VendorList() {
     setCounts(next)
     localStorage.setItem(BUYS_KEY, JSON.stringify(next))
   }, [])
+
+  function stepSize(e: React.MouseEvent): number {
+    if (e.shiftKey) return 10
+    if (e.ctrlKey)  return 5
+    return 1
+  }
 
   function setCount(vi: number, pi: number, value: number, max: number) {
     const key  = `${vi}:${pi}`
@@ -182,11 +195,25 @@ export function VendorList() {
           return (
             <div key={vendor.name} className="vendor-card">
               <div className="vendor-card-header">
-                {vendor.url
-                  ? <a href={vendor.url} target="_blank" rel="noreferrer"
-                      className="vendor-card-name">{vendor.name}</a>
-                  : <span className="vendor-card-name">{vendor.name}</span>
-                }
+                <div className="vendor-header-left">
+                  {vendor.url
+                    ? <a href={vendor.url} target="_blank" rel="noreferrer"
+                        className="vendor-card-name">{vendor.name}</a>
+                    : <span className="vendor-card-name">{vendor.name}</span>
+                  }
+                  {vendor.subtitle && (
+                    <span className="vendor-subtitle">{vendor.subtitle}</span>
+                  )}
+                </div>
+                {vendor.waypoint && (
+                  <button
+                    className={`vendor-wp-btn${copiedWp === vendor.waypoint ? ' copied' : ''}`}
+                    onClick={() => copyWaypoint(vendor.waypoint!)}
+                    title={`Copy waypoint: ${vendor.waypoint}`}
+                  >
+                    {copiedWp === vendor.waypoint ? '✓' : '⊕'} {vendor.waypoint}
+                  </button>
+                )}
               </div>
 
               {vendor.notes && vendor.notes.length > 0 && (
@@ -240,11 +267,13 @@ export function VendorList() {
                                   </button>
                                   <span className="vendor-count">{bought} / {max}</span>
                                   <button className="vendor-adj"
-                                    onClick={() => setCount(vi, pi, bought - 1, max)}
-                                    disabled={bought === 0}>−</button>
+                                    onClick={e => setCount(vi, pi, bought - stepSize(e), max)}
+                                    disabled={bought === 0}
+                                    title="−1  ·  Ctrl: −5  ·  Shift: −10">−</button>
                                   <button className="vendor-adj"
-                                    onClick={() => setCount(vi, pi, bought + 1, max)}
-                                    disabled={bought >= max}>+</button>
+                                    onClick={e => setCount(vi, pi, bought + stepSize(e), max)}
+                                    disabled={bought >= max}
+                                    title="+1  ·  Ctrl: +5  ·  Shift: +10">+</button>
                                 </div>
                               )}
                             </td>
@@ -268,6 +297,25 @@ export function VendorList() {
                     })}
                   </tbody>
                 </table>
+              )}
+
+              {vendor.subVendors && vendor.subVendors.length > 0 && (
+                <ul className="vendor-subvendors">
+                  {vendor.subVendors.map(sv => (
+                    <li key={sv.name} className="vendor-subvendor">
+                      <span className="vendor-subvendor-name">{sv.name}</span>
+                      {sv.waypoint && (
+                        <button
+                          className={`vendor-wp-btn${copiedWp === sv.waypoint ? ' copied' : ''}`}
+                          onClick={() => copyWaypoint(sv.waypoint!)}
+                          title={`Copy waypoint: ${sv.waypoint}`}
+                        >
+                          {copiedWp === sv.waypoint ? '✓' : '⊕'} {sv.waypoint}
+                        </button>
+                      )}
+                    </li>
+                  ))}
+                </ul>
               )}
             </div>
           )

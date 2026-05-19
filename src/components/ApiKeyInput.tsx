@@ -38,17 +38,25 @@ export function ApiKeyInput({ apiKey, accountName, onSave, onClear }: Props) {
       )}
       {!accountName && (
         <form onSubmit={handleSubmit} className="api-key-form">
-          <input
-            type="password"
-            className="api-key-input"
-            placeholder="Paste your API key here…"
-            value={draft}
-            onChange={e => setDraft(e.target.value)}
-            spellCheck={false}
-            autoComplete="off"
-          />
-          <button className="btn-primary" type="submit" disabled={loading || !draft.trim()}>
-            {loading ? 'Checking…' : 'Connect'}
+          <div className="api-key-input-wrap">
+            <input
+              type="password"
+              className="api-key-input"
+              placeholder="Paste your API key…"
+              value={draft}
+              onChange={e => setDraft(e.target.value)}
+              spellCheck={false}
+              autoComplete="off"
+            />
+            {draft && (
+              <button type="button" className="btn-input-clear"
+                onClick={() => setDraft('')} title="Clear">✕</button>
+            )}
+          </div>
+          <button className="btn-icon-connect" type="submit"
+            disabled={loading || !draft.trim()}
+            title={loading ? 'Connecting…' : 'Connect'}>
+            {loading ? <span className="connect-spin">↺</span> : '→'}
           </button>
         </form>
       )}

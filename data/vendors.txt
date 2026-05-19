@@ -1,4 +1,4 @@
-BUY-4373 (https://wiki.guildwars2.com/wiki/BUY-4373)
+BUY-4373 (Fractals) (https://wiki.guildwars2.com/wiki/BUY-4373)
 - Mystic Clovers, 10, weekly, 150 Fractal Relics + 2 Globs + 2 mystic coins + 2 spirit shards
 - 30 Deeply Discopunted Fractal Encryption Key, daily, 1 fractal relic + 20 silver each
 - 30 Discounted fractal Encryption key, daily, 1 fractal relic + 25 silver + 4 copper
@@ -12,10 +12,10 @@ League Vendor (PvP) (https://wiki.guildwars2.com/wiki/League_Vendor)
 - Mystic clover, 5 weekly, 5 pvp tickets  +2 globs + 2 mystic coins + 2 spirit shards
 - provisioner token, 15 weekly, 5 pvp tickets + 100 shards of glory
 
-Lyhr (https://wiki.guildwars2.com/wiki/Lyhr)
+Lyhr [&BB8OAAA=] (https://wiki.guildwars2.com/wiki/Lyhr)
 - Mystic Clover, 3 mystic coins + 3 obsidian shards + 5 globs + 3 spirit shards
 
-Miyani / Mystic Forge Attendent (https://wiki.guildwars2.com/wiki/Miyani, https://wiki.guildwars2.com/wiki/Mystic_Forge_Attendant)
+Miyani / Mystic Forge Attendent  (https://wiki.guildwars2.com/wiki/Miyani, https://wiki.guildwars2.com/wiki/Mystic_Forge_Attendant)
 - Mystic Clover, 10 weekly, 3 Mystic Coin + 3 Obsidian Shard + 3 Spirit Shard + 5 Glob of Ectoplasm
 
 Wizard's Vault
@@ -27,7 +27,7 @@ Wizard's Vault
 - Bag of Laurels (150 per season), 10 each
 - Tome of Knowledge (35 per season), 8 each (source of spirit shards)
 
-Manfred Njallson (Raids) (https://wiki.guildwars2.com/wiki/Manfred_Njallson)
+Manfred Njallson (Raids) [&BCAJAAA=] (https://wiki.guildwars2.com/wiki/Manfred_Njallson)
 - Mystic Clover, Limit 15 per week, 2 Glob of Ectoplasm + 2 Mystic Coin + 2 Spirit Shard + 30 Magnetite Shard	
 - Mystic Coin,	Limit 10 per week, 1 Spirit Shard + 10 Magnetite Shard
 
@@ -37,14 +37,15 @@ Super Adventure Box Weekly Trader (https://wiki.guildwars2.com/wiki/Super_Advent
 
 
 Good sources of weekly provisioner's tokens (Faction Provisioners)
-* https://wiki.guildwars2.com/wiki/Faction_Provisioner#List_of_Crafting_Materials_on_daily_rotation
-look at the table for the Heart of Thorn's vendors for cheap TP weapons
-7 tokens each vendor, weekly:
+
+look at the table for the Heart of Thorn's vendors for cheap TP weapons (https://wiki.guildwars2.com/wiki/Faction_Provisioner#List_of_Crafting_Materials_on_daily_rotation)
+
+7 tokens each vendor, weekly (21 total):
 - Quartermaster Natomi [&BN4HAAA=]
 - Scavenger Rakatin [&BNYHAAA=]
 - Supply Assistant [&BMwHAAA=]
 
 Exchanges (https://wiki.guildwars2.com/wiki/Portable_exchanger)
-Gharr Leadclaw
+Horn of Maguuma
 - Astral Fluctuating Mass, 42 per week
     - good sink for bloodstone, empyreal, dragonite

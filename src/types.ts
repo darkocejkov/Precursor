@@ -10,7 +10,7 @@ export interface MaterialNode {
 export interface LegendaryItem {
   id: string;
   name: string;
-  type: 'weapon' | 'armor';
+  type: 'weapon' | 'armor' | 'accessory';
   subtype: string;
   isFullSet?: boolean;
   /** GW2 item IDs for checking against /v2/account/legendaryarmory */
@@ -18,7 +18,7 @@ export interface LegendaryItem {
   components: MaterialNode[];
 }
 
-export type Category = 'armor' | 'weapon';
+export type Category = 'armor' | 'weapon' | 'accessory';
 
 export interface PlayerInventory {
   /** itemId -> total count across bank + material storage */

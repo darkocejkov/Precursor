@@ -9,9 +9,13 @@ export interface GatheringMaterial {
 export interface GatheringNode {
   zone: string
   location: string
-  waypoint: string
+  waypoint?: string
   image?: string
   materials: GatheringMaterial[]
+}
+
+export function nodeKey(node: GatheringNode): string {
+  return node.waypoint ?? `${node.zone}:${node.location}`
 }
 
 export const VM_RANGE: Record<MatType, [number, number]> = {
@@ -377,5 +381,15 @@ export const GATHERING_NODES: GatheringNode[] = [
       { name: 'Cabbage',         count: 6, type: 'foraging' },
       { name: 'Butternut Squash', count: 3, type: 'foraging' },
     ],
+  },
+  {
+    zone: 'Guild Hall',
+    location: 'Guild Hall',
+    materials: [],
+  },
+  {
+    zone: 'Home Instance',
+    location: 'Home Instance',
+    materials: [],
   },
 ]
