@@ -1,0 +1,114 @@
+highly recommend using infinite tools + glyph:
+For Additional currency:
+- https://wiki.guildwars2.com/wiki/Glyph_of_Volatility for Volatile Magic (VM)
+    Foraging (3-9), Logging (1-3), Mining (1-3)
+- https://wiki.guildwars2.com/wiki/Glyph_of_the_Unbound for Unbound  Magic
+    Foraging (3-5), Logging (1-3), Mining (1-3)
+- https://wiki.guildwars2.com/wiki/Glyph_of_Virtue for Karma
+
+For speed:
+- https://wiki.guildwars2.com/wiki/Glyph_of_Reaping collects within 900 units
+- https://wiki.guildwars2.com/wiki/Glyph_of_Industry 50% faster
+- https://wiki.guildwars2.com/wiki/Glyph_of_Flight 100% movespeed 
+- https://wiki.guildwars2.com/wiki/Glyph_of_the_Timekeeper 33% chance to instant gather
+
+For more materials:
+- https://wiki.guildwars2.com/wiki/Glyph_of_Bounty 
+- https://wiki.guildwars2.com/wiki/Glyph_of_Overload
+
+Seitung Province, Village Waypoint [&BJ4MAAA=] (https://gw2efficiency.com/assets/gathering/permanent/Seitung%20Province1.png)
+    3 cabbage
+    3 carrot
+    5 flax
+    1 thyme
+    1 parsley
+    9 lotus
+    4 potatoes
+    3 soybeans
+    4 sugar pumpkins
+    4 zucchini
+Dry Top, Vine Bridge Waypoint [&BIYHAAA=] (https://gw2efficiency.com/assets/gathering/permanent/Dry%20Top%20-%20Perma%20Carrot%20Lettuce%20Cabbage%20&%20Cactus.jpg)
+    4 carrot
+    4 lettuce
+    2 cabbage
+    4 cactus
+Verdant Brink, Jaka Itzel Waypoint [&BOAHAAA=] (https://gw2efficiency.com/assets/gathering/permanent/Verdant%20Brink%20-%20Perma%20Flax.jpg)
+    12 flax
+Verdant Brink, Shipwreck Peak Waypoint [&BN4HAAA=] (https://gw2efficiency.com/assets/gathering/permanent/15%20-%20Mussels%20-%20Verdant%20Brink%20-%20Shipwreck%20Peak%20Waypoint.png)
+    11 mussels
+Ember Bay, Castaway Circus Waypoint [&BHgJAAA=] (https://gw2efficiency.com/assets/gathering/permanent/Elder%20Wood%20-%20Ember%20Bay%20-%20Castaway%20Circus%20Waypoint.png)
+    15 elder wood
+Bloodstone Fen, Soulkeeper's Airship Waypoint [&BEsJAAA=] (https://gw2efficiency.com/assets/gathering/permanent/Elder%20Wood%20-%20Soulkeeper's%20Airship%20Waypoint.png)
+    14 elder wood
+Straits of Devastation, Waywarde Waypoint [&BPgCAAA=] https://gw2efficiency.com/assets/gathering/permanent/Straits%20of%20Devastation%20-%20Perma%20Elder%20Wood.jpg
+    12 elder wood
+Straits of Devastation, Plinth Timberland Waypoint [&BFgGAAA=] https://gw2efficiency.com/assets/gathering/permanent/Straits%20of%20Devastation%20-%20Perma%20Artichokes.jpg
+    8 artichoke
+Malchor's Leap, Pagga's Waypoint [&BKYCAAA=] https://gw2efficiency.com/assets/gathering/permanent/Machor's%20Leap%20-%20Perma%20Elder%20Wood.jpg
+    15 elder wood
+Sparkfly Fen, Ocean's Gulley Waypoint [&BMkBAAA=] https://gw2efficiency.com/assets/gathering/permanent/Sparkfly%20Fen%20-%20Perma%20Cauliflower.jpg
+    8 Cauliflower
+Mount Maelstrom, Oxbow Isle Waypoint [&BNECAAA=] https://gw2efficiency.com/assets/gathering/permanent/Mount%20Maelstrom%20-%20Perma%20Artichokes.jpg
+    8 artichoke
+Metrica Province, Akk Wilds Waypoint [&BEIAAAA=] https://gw2efficiency.com/assets/gathering/permanent/Metrica%20Province%20-%20Perma%20Potatoes.jpg
+    8 potatoes
+Caledon Forest, Kraitbane Haven Waypoint [&BEABAAA=] https://gw2efficiency.com/assets/gathering/permanent/Caledon%20Forest%20-%20Perma%20Lettuce.jpg
+    8 lettuce
+Queensdale, Beetletun Waypoint [&BPoAAAA=] https://gw2efficiency.com/assets/gathering/permanent/Queensdale%20-%20Perma%20Lettuce.jpg
+    8 lettuce
+Kessex Hills, Cereboth Waypoint [&BBIAAAA=] https://gw2efficiency.com/assets/gathering/permanent/Kessex%20Hills%20-%20Perma%20Strawberry%20Patch.jpg
+    8 strawberries
+Harathi Hinterlands, Demetra Waypoint [&BKsAAAA=] https://gw2efficiency.com/assets/gathering/permanent/Harathi%20Hinterlands%20-%20Perma%20Cabbage.jpg
+    8 cabbage
+Gendarran Fields, Provern Shore Waypoint [&BOQAAAA=] https://gw2efficiency.com/assets/gathering/permanent/Gendarren%20Fields%20-%20Perma%20Spinach.jpg
+    8 spinach
+Bloodtide Coast, Remanda Waypoint [&BKcBAAA=] https://gw2efficiency.com/assets/gathering/permanent/Bloodtide%20Coast%20-%20Perma%20Sugar%20Pumpkins.jpg
+    8 sugar pumpkins
+Timberline Falls, Thistlereed Waypoint [&BFECAAA=] https://gw2efficiency.com/assets/gathering/permanent/Timberline%20Falls%20-%20Perma%20Cauliflower.jpg
+    8 Cauliflower
+Snowden Drifts, Reaver's Waypoint [&BMAAAAA=] https://gw2efficiency.com/assets/gathering/permanent/Snowden%20Drifts%20-%20Perma%20Strawberry%20Patch.jpg
+    8 strawberries
+Lornar's Pass, Demon's Maw Waypoint [&BOYAAAA=] https://gw2efficiency.com/assets/gathering/permanent/Lornar's%20Pass%20-%20Perma%20Grapes.jpg
+    8 grapes
+Frostgorge Sound, Arundon Waypoint [&BHgCAAA=] https://gw2efficiency.com/assets/gathering/permanent/Frostgorge%20Sound%20-%20Perma%20Butternut%20Squash.jpg
+    8 butterut squash
+Dredgehaunt Cliffs, Wide Expanse Waypoint [&BF8CAAA=] https://gw2efficiency.com/assets/gathering/permanent/Dredgehaunt%20Cliffs%20-%20Perma%20Cabbage.jpg
+    8 cabbage
+Plains of Ashford, Loreclaw Waypoint [&BMcDAAA=] https://gw2efficiency.com/assets/gathering/permanent/Plains%20of%20Ashford%20-%20Perma%20Potatoes.jpg
+    8 potatoes
+Iron Marches, Bulwark Waypoint [&BOwBAAA=] https://gw2efficiency.com/assets/gathering/permanent/Iron%20Marches%20-%20Perma%20Sugar%20Pumpkins.jpg
+    8 sugar pumpkins
+Grothmar Valley, Blood Keep Waypoint [&BBsMAAA=] https://gw2efficiency.com/assets/gathering/permanent/Grothmar%20Valley1.png
+    3 Cabbage
+    3 Lettuce
+    3 Potatoes
+    3 Strawberries
+    3 Sugar 
+    3 Pumpkins
+    3 Zucchini
+Fireheart Rise, Apostate Waypoint [&BB0CAAA=] https://gw2efficiency.com/assets/gathering/permanent/Fireheart%20Rise%20-%20Perma%20Butternut%20Squash.jpg
+    8 butterut squash
+Fields of Ruin, Ogre Road Waypoint [&BE8BAAA=] https://gw2efficiency.com/assets/gathering/permanent/Fields%20of%20Ruin%20-%20Perma%20Grapes.jpg
+    8 grapes
+Diessa Plateau, Nolan Waypoint [&BN4AAAA=] https://gw2efficiency.com/assets/gathering/permanent/Diessa%20Plateau%20-%20Perma%20Strawberry%20Patch.jpg  
+    8 strawberries
+Blazeridge Steppes, Lunk Kraal Waypoint [&BAACAAA=] https://gw2efficiency.com/assets/gathering/permanent/Blazeridge%20Steppes%20-%20Perma%20Cabbage.jpg
+    8 cabbage
+The Desolation, Bonestrand Waypoint [&BNwKAAA=] https://gw2efficiency.com/assets/gathering/permanent/11%20-%20Carrots%20-%20The%20Desolation%20-%20Bonestrand%20Waypoint.png
+    7 carrot
+Sandswept Isles, Atholma Waypoint [&BEMLAAA=] https://gw2efficiency.com/assets/gathering/permanent/12%20-%20Mixed%20-%20Sandswept%20Isles%20-%20Atholma%20Waypoint.png
+    4 artichoke
+    4 cabbage
+    4 lentils
+Jahai Bluffs, Reclaimed Chantry Waypoint [&BJkLAAA=] https://gw2efficiency.com/assets/gathering/permanent/Flax%20-%20Reclaimed%20Chantry%20Waypoint.png
+    12 flax
+Domain of Kourna, Allied Encampment [&BFcLAAA=] https://gw2efficiency.com/assets/gathering/permanent/Flax%20-%20Allied%20Encampment%20Waypoint.png
+    12 flax
+Desert Highlands, Brightwater Waypoint [&BJEKAAA=] https://gw2efficiency.com/assets/gathering/permanent/7%20-%20Strawberry%20-%20Desert%20Highlands%20-%20Brightwater%20Waypoint.png
+    6 strawberries
+Shipwreck Strand, Pub Canach Waypoint [&BJEPAAA=]
+    3 pumpkins
+    6 cabbage
+    3 butterut squash
+
+

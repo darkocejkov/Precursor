@@ -1,0 +1,16 @@
+source for park locations: https://fast.farming-community.eu/open-world/alt-parking
+
+Bjora Marches (Icebrood Saga):
+* lookout for eternal ice nodes
+* requires masteries for essence chests
+* recommended https://wiki.guildwars2.com/wiki/Prototype_Position_Rewinder
+- Ox Shrine (https://fast.farming-community.eu/alt-parking-details/large-chest-of-essence/bjora-marches-large-chest-of-resilience) https://fast.farming-community.eu/assets/images/alt_parking/alt_parking_bjora_marches_large_chest_of_resilience.jpg
+    - large chest, small chest, medium chest, glorious norn chest
+- Eaglewatch Rise  (https://fast.farming-community.eu/alt-parking-details/large-chest-of-essence/bjora-marches-large-chest-of-vigilance) https://fast.farming-community.eu/assets/images/alt_parking/alt_parking_bjora_marches_large_chest_of_vigilance.jpg
+    - 1 large chest, 2 small chest
+- Forest of a thousand voices (https://fast.farming-community.eu/alt-parking-details/large-chest-of-essence/bjora-marches-large-chest-of-valor) https://fast.farming-community.eu/assets/images/alt_parking/alt_parking_bjora_marches_large_chest_of_valor.jpg
+    - large chest, medium chest, norn chest
+
+Magic Mirrors (Visions of Eternity)
+- Starlit Weald (https://fast.farming-community.eu/alt-parking-details/magic-mirror/starlit-weald-magic-mirror) https://fast.farming-community.eu/assets/images/alt_parking/alt_parking_starlit_weald_magic_mirror_all.png
+- Shipwreck Strand (https://fast.farming-community.eu/alt-parking-details/magic-mirror/shipwreck-strand-magic-mirror) https://fast.farming-community.eu/assets/images/alt_parking/alt_parking_shipwreck_strand_magic_mirror_all.png

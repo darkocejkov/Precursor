@@ -1,0 +1,15 @@
+Wizard's vault 4 daily
+- 10 each
+- completion chest: 1 gold, 20 acclaim, 250 reward track points per pvp/wvw objective
+- equates to 60 acclaim total
+tips:
+
+3 daily Fractals + recommended (usually 1)
+    completing a daily fractal rewards the all tiers at and below the tier you did it at
+    ex. tier 3 completion gives tiers 1,2, and 3 chests.
+- tier 1 - initiate https://wiki.guildwars2.com/wiki/Fractal_Initiate%27s_Chest
+- tier 2 - adept https://wiki.guildwars2.com/wiki/Fractal_Adept%27s_Chest
+- tier 3 - expert https://wiki.guildwars2.com/wiki/Fractal_Expert%27s_Chest
+- tier 4 - master https://wiki.guildwars2.com/wiki/Fractal_Master%27s_Chest
+
+

@@ -67,10 +67,9 @@ ul {
   background: var(--bg-mid);
   border-bottom: 1px solid var(--border);
   padding: 0 24px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
   z-index: 10;
 }
 
@@ -103,8 +102,9 @@ ul {
 .app-nav {
   display: flex;
   align-items: stretch;
-  height: 100%;
+  height: var(--header-h);
   gap: 2px;
+  justify-content: center;
 }
 
 .nav-tab {
@@ -119,6 +119,9 @@ ul {
   cursor: pointer;
   transition: color .15s, border-color .15s;
   height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .nav-tab:hover {
@@ -135,6 +138,7 @@ ul {
   display: flex;
   gap: 8px;
   align-items: center;
+  justify-self: end;
 }
 
 .reset-chip {
@@ -1124,4 +1128,685 @@ span.wp-code {
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 8px;
+}
+
+/* ── Task / Vendor List Views ─────────────────────────────── */
+.task-list-view {
+  max-width: 720px;
+  padding-top: 24px;
+}
+
+.vendor-form {
+  flex-wrap: wrap;
+}
+
+.vendor-zone-input {
+  max-width: 200px;
+}
+
+.vendor-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.vendor-info .todo-text {
+  flex: 0 0 auto;
+}
+
+.vendor-zone {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Daily section dividers ───────────────────────────────── */
+.daily-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.daily-section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.daily-section-count {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--green);
+}
+
+.section-chevron {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform .2s;
+  display: inline-block;
+  line-height: 1;
+}
+
+.section-chevron.open {
+  transform: rotate(90deg);
+}
+
+.btn-icon-reset {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+  transition: color .15s;
+}
+
+.btn-icon-reset:hover {
+  color: var(--accent);
+}
+
+/* ── Gathering View ───────────────────────────────────────── */
+.gathering-view {
+  max-width: 720px;
+  padding-top: 24px;
+}
+
+.gathering-node-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.gathering-node-info .todo-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gathering-node-zone {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Gathering: material chips + VM ───────────────────────── */
+.todo-item.with-detail {
+  align-items: flex-start;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.todo-item.with-detail .todo-check {
+  margin-top: 1px;
+}
+
+.todo-item.with-detail .wp-badge {
+  margin-top: 2px;
+}
+
+.gathering-materials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+  align-items: center;
+}
+
+.gathering-mat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg-mid);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 4px 1px 2px;
+}
+
+.gathering-mat-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.gathering-mat-abbr {
+  font-size: 9px;
+  color: var(--text-muted);
+  padding: 0 2px;
+}
+
+.gathering-mat-count {
+  font-size: 10px;
+  color: var(--text-dim);
+  line-height: 1;
+}
+
+.gathering-vm {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-left: 2px;
+  white-space: nowrap;
+  padding: 1px 5px;
+  background: var(--bg-mid);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+/* ── Gathering hover image portal ─────────────────────────── */
+.gathering-hover-portal {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .7);
+  background: var(--bg-card);
+  max-width: 390px;
+}
+
+.gathering-hover-portal img {
+  display: block;
+  max-width: 390px;
+  max-height: 390px;
+  object-fit: contain;
+}
+
+.gathering-hover-caption {
+  font-size: 10px;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 4px 8px 6px;
+  border-top: 1px solid var(--border);
+  letter-spacing: .2px;
+}
+
+/* ── Marquee ──────────────────────────────────────────────── */
+.marquee-bar {
+  height: 30px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--bg-mid) 80%, var(--bg));
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 28px;
+  padding: 0 28px;
+  width: max-content;
+  animation: marquee-scroll 55s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0) }
+  to   { transform: translateX(-50%) }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.marquee-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+.marquee-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+}
+
+.marquee-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+
+/* ── Vendor cards ─────────────────────────────────────────── */
+.vendor-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vendor-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.vendor-card-header {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent) 5%, var(--bg-card));
+}
+
+.vendor-card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.vendor-card-name:hover {
+  text-decoration: underline;
+}
+
+.vendor-notes {
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  list-style: disc;
+  padding-left: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.vendor-notes li {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  list-style: disc;
+}
+
+.vendor-products {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.vendor-products th {
+  text-align: left;
+  padding: 7px 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.vendor-products td {
+  padding: 7px 14px;
+  color: var(--text);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.vendor-products tr:last-child td {
+  border-bottom: none;
+}
+
+.vendor-products td:first-child {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.vendor-products td:not(:first-child) {
+  color: var(--text-dim);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ── Cost display ─────────────────────────────────────────── */
+.cost-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.cost-component {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.cost-plus {
+  color: var(--text-muted);
+  margin: 0 1px;
+  font-size: 11px;
+}
+
+.cost-amount {
+  font-size: 12px;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.cost-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+  flex-shrink: 0;
+}
+
+.cost-name {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.cost-done {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.vendor-product-name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.vendor-product-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: crisp-edges;
+}
+
+.vendor-progress {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.vendor-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 3px;
+  font-size: 9px;
+  color: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  transition: border-color .15s, background .15s, color .15s;
+}
+
+.vendor-toggle:hover {
+  border-color: var(--accent);
+}
+
+.vendor-toggle.done {
+  background: var(--green-dim);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.vendor-count {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  min-width: 40px;
+  text-align: center;
+}
+
+.vendor-limit-inf {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1;
+  margin-left: 2px;
+}
+
+.vendor-adj {
+  background: var(--bg-mid);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-dim);
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color .15s, border-color .15s;
+}
+
+.vendor-adj:hover:not(:disabled) {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.vendor-adj:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.vendor-row-done .vendor-product-name > span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.vendor-row-done .vendor-product-icon {
+  opacity: .45;
+}
+
+.vendor-row-done td:not(:first-child) {
+  opacity: .5;
+}
+
+/* ── Daily info cards ─────────────────────────────────────── */
+.daily-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.daily-info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+}
+
+.daily-info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.daily-info-card-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.daily-acclaim {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid var(--accent-dim);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.daily-info-card-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.daily-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.daily-tier-link {
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid var(--accent-dim);
+  border-radius: 4px;
+  padding: 2px 8px;
+  transition: background .15s;
+}
+
+.daily-tier-link:hover {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+/* ── Custom tasks sub-section ─────────────────────────────── */
+.custom-tasks-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* ── Parking groups ───────────────────────────────────────── */
+.parking-group {
+  margin-bottom: 20px;
+}
+
+.parking-group-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.parking-group-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.parking-group-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.parking-rewards {
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ── Weekly info cards ────────────────────────────────────── */
+.weekly-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.weekly-info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+}
+
+.weekly-info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.weekly-info-card-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.weekly-acclaim {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid var(--accent-dim);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.weekly-info-card-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.weekly-info-card-reward {
+  font-size: 12px;
+  color: var(--green);
+  margin-top: 4px;
+}
+
+.weekly-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.weekly-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.weekly-note a {
+  color: var(--accent);
 }

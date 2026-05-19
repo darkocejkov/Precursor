@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { NavLink, Routes, Route, Navigate, useMatch } from 'react-router-dom'
 import type { Category, LegendaryItem, PlayerInventory } from './types'
 import { LEGENDARY_ARMORS } from './data/legendary-armors'
 import { LEGENDARY_WEAPONS } from './data/legendary-weapons'
@@ -8,9 +9,10 @@ import { ApiKeyInput } from './components/ApiKeyInput'
 import { CategorySelector } from './components/CategorySelector'
 import { LegendaryDetail } from './components/LegendaryDetail'
 import { ResetTimers } from './components/ResetTimers'
-import { TodoList } from './components/TodoList'
-
-type View = 'tracker' | 'todo'
+import { TaskList } from './components/TaskList'
+import { VendorList } from './components/VendorList'
+import { DailiesView } from './components/DailiesView'
+import { Marquee } from './components/Marquee'
 
 function groupBySubtype(items: LegendaryItem[]) {
   const map = new Map<string, LegendaryItem[]>()
@@ -25,18 +27,23 @@ function groupBySubtype(items: LegendaryItem[]) {
 const STORAGE_KEY = 'precursor_api_key'
 const ACCOUNT_KEY = 'precursor_account_name'
 
-export default function App() {
-  const [view, setView] = useState<View>('tracker')
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem(STORAGE_KEY) ?? '')
-  const [accountName, setAccountName] = useState<string | null>(() => localStorage.getItem(ACCOUNT_KEY))
-  const [category, setCategory] = useState<Category>('armor')
-  const [selectedId, setSelectedId] = useState<string | null>(null)
-  const [inventory, setInventory] = useState<PlayerInventory | null>(null)
-  const [armory, setArmory] = useState<Set<number> | null>(null)
-  const [inventoryLoading, setInventoryLoading] = useState(false)
-  const [inventoryError, setInventoryError] = useState<string | null>(null)
+function navClass({ isActive }: { isActive: boolean }) {
+  return `nav-tab${isActive ? ' active' : ''}`
+}
 
-  const items: LegendaryItem[] = category === 'armor' ? LEGENDARY_ARMORS : LEGENDARY_WEAPONS
+export default function App() {
+  const onLegendaries = useMatch('/legendaries')
+
+  const [apiKey,          setApiKey]          = useState(() => localStorage.getItem(STORAGE_KEY) ?? '')
+  const [accountName,     setAccountName]     = useState<string | null>(() => localStorage.getItem(ACCOUNT_KEY))
+  const [category,        setCategory]        = useState<Category>('armor')
+  const [selectedId,      setSelectedId]      = useState<string | null>(null)
+  const [inventory,       setInventory]       = useState<PlayerInventory | null>(null)
+  const [armory,          setArmory]          = useState<Set<number> | null>(null)
+  const [inventoryLoading, setInventoryLoading] = useState(false)
+  const [inventoryError,  setInventoryError]  = useState<string | null>(null)
+
+  const items        = category === 'armor' ? LEGENDARY_ARMORS : LEGENDARY_WEAPONS as LegendaryItem[]
   const selectedItem = items.find(i => i.id === selectedId) ?? items[0] ?? null
 
   const loadInventory = useCallback(async (key: string) => {
@@ -98,25 +105,19 @@ export default function App() {
         </div>
 
         <nav className="app-nav">
-          <button
-            className={`nav-tab${view === 'tracker' ? ' active' : ''}`}
-            onClick={() => setView('tracker')}
-          >
-            Tracker
-          </button>
-          <button
-            className={`nav-tab${view === 'todo' ? ' active' : ''}`}
-            onClick={() => setView('todo')}
-          >
-            To-Do
-          </button>
+          <NavLink to="/legendaries" className={navClass}>Legendaries</NavLink>
+          <NavLink to="/vendors"     className={navClass}>Vendors</NavLink>
+          <NavLink to="/dailies"     className={navClass}>Dailies</NavLink>
+          <NavLink to="/weeklies"    className={navClass}>Weeklies</NavLink>
         </nav>
 
         <ResetTimers />
       </header>
 
+      <Marquee />
+
       <main className="app-main">
-        {view === 'tracker' && (
+        {onLegendaries && (
           <aside className="sidebar">
             <ApiKeyInput
               apiKey={apiKey}
@@ -126,7 +127,7 @@ export default function App() {
             />
 
             {inventoryLoading && <p className="loading-text">Loading inventory…</p>}
-            {inventoryError && <p className="error-text">{inventoryError}</p>}
+            {inventoryError   && <p className="error-text">{inventoryError}</p>}
 
             <CategorySelector active={category} onChange={c => { setCategory(c); setSelectedId(null) }} />
 
@@ -160,12 +161,17 @@ export default function App() {
         )}
 
         <section className="content">
-          {view === 'tracker'
-            ? selectedItem
-              ? <LegendaryDetail key={selectedItem.id} item={selectedItem} inventory={inventory} />
-              : <p className="placeholder-text">Select a legendary item from the list.</p>
-            : <TodoList />
-          }
+          <Routes>
+            <Route path="/"            element={<Navigate to="/legendaries" replace />} />
+            <Route path="/legendaries" element={
+              selectedItem
+                ? <LegendaryDetail key={selectedItem.id} item={selectedItem} inventory={inventory} />
+                : <p className="placeholder-text">Select a legendary item from the list.</p>
+            } />
+            <Route path="/vendors"  element={<VendorList />} />
+            <Route path="/dailies"  element={<DailiesView />} />
+            <Route path="/weeklies" element={<TaskList cycle="weekly" />} />
+          </Routes>
         </section>
       </main>
     </div>
