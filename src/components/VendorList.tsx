@@ -11,32 +11,55 @@ import {
 interface CostPart { amount: number; name: string }
 
 const COST_LOOKUP: Record<string, { type: 'currency' | 'item'; id: number }> = {
-  'Fractal Relics':   { type: 'currency', id: 7  },
-  'Fractal Relic':    { type: 'currency', id: 7  },
-  'Badges of Honor':  { type: 'currency', id: 4  },
-  'Badge of Honor':   { type: 'currency', id: 4  },
-  'Badges':           { type: 'currency', id: 4  },
-  'Badge':            { type: 'currency', id: 4  },
-  'Skirmish Tickets': { type: 'currency', id: 15 },
-  'Skirmish Ticket':  { type: 'currency', id: 15 },
-  'Spirit Shards':    { type: 'currency', id: 23 },
-  'Spirit Shard':     { type: 'currency', id: 23 },
-  'Magnetite Shards': { type: 'currency', id: 28 },
-  'Magnetite Shard':  { type: 'currency', id: 28 },
-  'Astral Acclaim':   { type: 'currency', id: 54 },
-  'Globs':            { type: 'item',     id: 19721 },
-  'Glob':             { type: 'item',     id: 19721 },
-  'Globs of Ecto':    { type: 'item',     id: 19721 },
-  'Glob of Ecto':     { type: 'item',     id: 19721 },
-  'Mystic Coins':     { type: 'item',     id: 19976 },
-  'Mystic Coin':      { type: 'item',     id: 19976 },
-  'Obsidian Shards':  { type: 'item',     id: 19925 },
-  'Obsidian Shard':   { type: 'item',     id: 19925 },
-  'Vision Crystal':   { type: 'item',     id: 68646 },
+  'Fractal Relics':              { type: 'currency', id: 7  },
+  'Fractal Relic':               { type: 'currency', id: 7  },
+  'Badges of Honor':             { type: 'currency', id: 15 },
+  'Badge of Honor':              { type: 'currency', id: 15 },
+  'Badges':                      { type: 'currency', id: 15 },
+  'Badge':                       { type: 'currency', id: 15 },
+  'Skirmish Tickets':            { type: 'currency', id: 26 },
+  'Skirmish Ticket':             { type: 'currency', id: 26 },
+  'Spirit Shards':               { type: 'currency', id: 23 },
+  'Spirit Shard':                { type: 'currency', id: 23 },
+  'Magnetite Shards':            { type: 'currency', id: 28 },
+  'Magnetite Shard':             { type: 'currency', id: 28 },
+  'Astral Acclaim':              { type: 'currency', id: 63 },
+  'Testimony of Jade Heroics':   { type: 'currency', id: 65 },
+  'PvP Tickets':                 { type: 'currency', id: 30 },
+  'PvP Ticket':                  { type: 'currency', id: 30 },
+  'Shards of Glory':             { type: 'currency', id: 33 },
+  'Shard of Glory':              { type: 'currency', id: 33 },
+  'Globs':                       { type: 'item',     id: 19721 },
+  'Glob':                        { type: 'item',     id: 19721 },
+  'Globs of Ecto':               { type: 'item',     id: 19721 },
+  'Glob of Ecto':                { type: 'item',     id: 19721 },
+  'Glob of Ectoplasm':           { type: 'item',     id: 19721 },
+  'Mystic Coins':                { type: 'item',     id: 19976 },
+  'Mystic Coin':                 { type: 'item',     id: 19976 },
+  'Obsidian Shards':             { type: 'item',     id: 19925 },
+  'Obsidian Shard':              { type: 'item',     id: 19925 },
+  'Vision Crystal':              { type: 'item',     id: 46746 },
+  'Memory of Battle':            { type: 'item',     id: 71581 },
+  'Memories of Battle':          { type: 'item',     id: 71581 },
+  'Bauble Bubbles':                   { type: 'item',     id: 41886 },
+  'Bauble Bubble':                    { type: 'item',     id: 41886 },
+  'Emblem of Tournament Victory':     { type: 'item',     id: 93012 },
 }
 
-const COST_CURRENCY_IDS = [4, 7, 15, 23, 28, 54]
-const COST_ITEM_IDS     = [19675, 19721, 19925, 19976, 68646]
+const COST_CURRENCY_IDS = [7, 15, 23, 26, 28, 30, 33, 63, 65]
+const COST_ITEM_IDS     = [19675, 19721, 19925, 19976, 46746, 71581, 41886, 93012]
+
+const COIN_ICONS = {
+  gold:   'https://wiki.guildwars2.com/images/thumb/d/d1/Gold_coin.png/18px-Gold_coin.png',
+  silver: 'https://wiki.guildwars2.com/images/thumb/3/3c/Silver_coin.png/18px-Silver_coin.png',
+  copper: 'https://wiki.guildwars2.com/images/thumb/e/eb/Copper_coin.png/18px-Copper_coin.png',
+}
+
+const COIN_VALUES: Record<string, number> = {
+  'Gold': 10000, 'Gold Coin': 10000,
+  'Silver': 100, 'Silver Coin': 100,
+  'Copper': 1,   'Copper Coin': 1,
+}
 
 function parseCostParts(cost: string): { parts: CostPart[]; perUnit: boolean } {
   const perUnit = /\beach\b/i.test(cost)
@@ -48,6 +71,19 @@ function parseCostParts(cost: string): { parts: CostPart[]; perUnit: boolean } {
   return { parts, perUnit }
 }
 
+function CoinDisplay({ copper }: { copper: number }) {
+  const g = Math.floor(copper / 10000)
+  const s = Math.floor((copper % 10000) / 100)
+  const c = copper % 100
+  return (
+    <span className="cost-component cost-coins">
+      {g > 0 && <><span className="cost-amount">{g}</span><img src={COIN_ICONS.gold}   className="cost-coin" alt="gold"   title="Gold" /></>}
+      {s > 0 && <><span className="cost-amount">{s}</span><img src={COIN_ICONS.silver} className="cost-coin" alt="silver" title="Silver" /></>}
+      {c > 0 && <><span className="cost-amount">{c}</span><img src={COIN_ICONS.copper} className="cost-coin" alt="copper" title="Copper" /></>}
+    </span>
+  )
+}
+
 function CostCell({ cost, multiplier, currIcons, itemIcons }: {
   cost: string
   multiplier: number
@@ -57,9 +93,19 @@ function CostCell({ cost, multiplier, currIcons, itemIcons }: {
   if (multiplier === 0) return <span className="cost-done">—</span>
   const { parts } = parseCostParts(cost)
   if (!parts.length) return <span className="cost-name">{cost.replace(/\s*each\s*$/i, '')}</span>
+
+  // Separate coin parts from other parts
+  let totalCopper = 0
+  const nonCoinParts: CostPart[] = []
+  for (const p of parts) {
+    const coinVal = COIN_VALUES[p.name]
+    if (coinVal !== undefined) totalCopper += p.amount * multiplier * coinVal
+    else nonCoinParts.push(p)
+  }
+
   return (
     <div className="cost-inline">
-      {parts.map((p, i) => {
+      {nonCoinParts.map((p, i) => {
         const entry = COST_LOOKUP[p.name]
         const icon  = entry
           ? (entry.type === 'currency' ? currIcons.get(entry.id) : itemIcons.get(entry.id))
@@ -76,6 +122,12 @@ function CostCell({ cost, multiplier, currIcons, itemIcons }: {
           </span>
         )
       })}
+      {totalCopper > 0 && (
+        <>
+          {nonCoinParts.length > 0 && <span className="cost-plus">+</span>}
+          <CoinDisplay copper={totalCopper} />
+        </>
+      )}
     </div>
   )
 }

@@ -8,11 +8,11 @@ import {
 
 // Grouped by purpose — order within each group reflects typical priority
 const CURRENCY_GROUPS: { ids: number[] }[] = [
-  { ids: [1, 3, 23, 54] },         // Core: Gold, Laurels, Spirit Shards, Astral Acclaim
+  { ids: [1, 3, 23, 63] },         // Core: Gold, Laurels, Spirit Shards, Astral Acclaim
   { ids: [7, 24] },                 // Fractal: Fractal Relics, Pristine Relics
-  { ids: [4, 15] },                 // WvW: Badges of Honor, WvW Tickets
+  { ids: [15, 26] },                // WvW: Badges of Honor, WvW Tickets
   { ids: [28] },                    // Raids: Magnetite Shards
-  { ids: [18, 45] },                // Open World: Unbound Magic, Volatile Magic
+  { ids: [32, 45] },                // Open World: Unbound Magic, Volatile Magic
 ]
 const ITEM_GROUP_IDS = [19976, 19675, 19721, 19925] // Crafting: Coins, Clovers, Globs, Obsidian
 

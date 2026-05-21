@@ -49,59 +49,70 @@ export const VENDOR_PRODUCT_ITEM_IDS: Record<string, number> = {
   'Mystic Coin':       19976,
   'Obsidian Shard':    19925,
   'Tome of Knowledge': 43741,
-  'Vision Crystal':    68646,
+  'Vision Crystal':    46746,
+  'Amalgamated Gemstone': 68063,
 }
 
-// Known GW2 item IDs for gathering materials (best-effort; missing ones show no icon)
+// Known GW2 item IDs for gathering materials
 export const MATERIAL_ITEM_IDS: Record<string, number> = {
-  'Cabbage':         12145,
-  'Carrot':          12134,
-  'Flax':            46839,
-  'Thyme':           12155,
-  'Parsley':         12156,
-  'Lotus':           24281,
-  'Lotus Root':      24281,
-  'Potatoes':        12140,
-  'Potato':          12140,
-  'Soybeans':        12532,
-  'Soybean':         12532,
-  'Sugar Pumpkins':  12146,
-  'Sugar Pumpkin':   12146,
-  'Zucchini':        12141,
-  'Lettuce':         12152,
-  'Cactus':          12533,
-  'Mussels':         24279,
-  'Elder Wood':      19699,
-  'Artichoke':       12143,
-  'Cauliflower':     12142,
-  'Strawberries':    12147,
-  'Strawberry':      12147,
-  'Spinach':         12131,
-  'Grapes':          12148,
-  'Grape':           12148,
-  'Butternut Squash':12149,
-  'Lentils':         12534,
-  'Lentil':          12534,
-  'Pumpkins':        12146,
-  'Pumpkin':         12146,
+  'Cabbage':           12332,  // Head of Cabbage
+  'Carrot':            12134,
+  'Flax':              74090,  // Pile of Flax Seeds
+  'Flax Seed':         74090,
+  'Thyme':             12248,  // Thyme Leaf
+  'Parsley':           12246,  // Parsley Leaf
+  'Lotus':             12510,  // Lotus Root
+  'Lotus Root':        12510,
+  'Potatoes':          12135,  // Potato
+  'Potato':            12135,
+  'Soybeans':          97105,  // Pile of Soybeans
+  'Soybean':           97105,
+  'Sugar Pumpkins':    12538,  // Sugar Pumpkin
+  'Sugar Pumpkin':     12538,
+  'Pumpkins':          12538,
+  'Pumpkin':           12538,
+  'Zucchini':          12330,
+  'Lettuce':           12238,  // Head of Lettuce
+  'Cactus':            67911,  // Fragrant Cactus Fruit
+  'Mussels':           74266,  // Mussel
+  'Mussel':            74266,
+  'Elder Wood':        19722,  // Elder Wood Log
+  'Artichoke':         12512,
+  'Cauliflower':       12532,  // Head of Cauliflower
+  'Strawberries':      12253,  // Strawberry
+  'Strawberry':        12253,
+  'Spinach':           12241,  // Spinach Leaf
+  'Grapes':            12341,  // Grape
+  'Grape':             12341,
+  'Butternut Squash':  12511,
+  'Lentils':           12534,  // Clove — closest available (no raw lentil item found)
+  'Lentil':            12534,
+}
+
+// Known GW2 item IDs for vendor cost components
+export const COST_ITEM_IDS_MAP: Record<string, number> = {
+  'Memory of Battle':   71581,
+  'Memories of Battle': 71581,
+  'Bauble Bubble':      41886,
+  'Bauble Bubbles':     41886,
 }
 
 // Currency IDs for the marquee
-export const MARQUEE_CURRENCY_IDS = [1, 3, 4, 7, 15, 18, 23, 24, 28, 45, 54]
+export const MARQUEE_CURRENCY_IDS = [1, 3, 7, 15, 23, 24, 26, 28, 32, 45, 63]
 export const MARQUEE_ITEM_IDS     = [19976, 19675, 19721, 19925]
 
 export const CURRENCY_LABELS: Record<number, string> = {
   1:  'Gold',
   3:  'Laurels',
-  4:  'Badges of Honor',
   7:  'Fractal Relics',
-  15: 'WvW Tickets',
-  18: 'Unbound Magic',
+  15: 'Badges of Honor',
   23: 'Spirit Shards',
   24: 'Pristine Relics',
+  26: 'WvW Tickets',
   28: 'Magnetite Shards',
+  32: 'Unbound Magic',
   45: 'Volatile Magic',
-  54: 'Astral Acclaim',
+  63: 'Astral Acclaim',
 }
 
 export const ITEM_LABELS: Record<number, string> = {

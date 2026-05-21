@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(curl *)",
       "Bash(npm create *)",
       "Bash(npm install *)",
       "Bash(npx tsc *)",
@@ -28,7 +29,10 @@
       "Bash(echo \"TSC Exit: $?\")",
       "Bash(netstat -ano)",
       "Bash(python3 -c 'import json,sys; d=json.load\\(open\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\); print\\(d.get\\('\\\\''Schedule'\\\\'',{}\\).get\\('\\\\''Duration'\\\\'','\\\\''?'\\\\''\\), d.get\\('\\\\''Schedule'\\\\'',{}\\).get\\('\\\\''Type'\\\\'','\\\\''?'\\\\''\\), repr\\(d.get\\('\\\\''ClipboardContent'\\\\'','\\\\'''\\\\''\\)\\)\\)')",
-      "Bash(node -e \"const d = require\\('./leggy-todos-import.json'\\); console.log\\(JSON.stringify\\(d.slice\\(0,3\\), null, 2\\)\\)\")"
+      "Bash(node -e \"const d = require\\('./leggy-todos-import.json'\\); console.log\\(JSON.stringify\\(d.slice\\(0,3\\), null, 2\\)\\)\")",
+      "Bash(curl -s \"https://api.guildwars2.com/v2/items?ids=12525,12526,12527,12528,12529,12530,12531,12535,12536,12537,12538,12539,12540,12541,12542,12543,12544,12545,12546,12547,12548\")",
+      "Bash(python3 -c \"import json,sys; [print\\(f'{d[\\\\\"id\\\\\"]}: {d[\\\\\"name\\\\\"]}'\\) for d in sorted\\(json.load\\(sys.stdin\\), key=lambda x: x['id']\\)]\")",
+      "Bash(python3 -c \"import json,sys; [print\\(d['id'], d['name']\\) for d in json.load\\(sys.stdin\\)]\")"
     ]
   }
 }
